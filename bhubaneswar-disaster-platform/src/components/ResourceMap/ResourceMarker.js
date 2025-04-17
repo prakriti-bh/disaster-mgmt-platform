@@ -48,7 +48,8 @@ export default function ResourceMarker({ resource }) {
     lastUpdated 
   } = resource;
   
-  const position = [coordinates.lat, coordinates.lng];
+  const position = [coordinates.latitude, coordinates.longitude];
+  
   const icon = resourceIcons[category] || resourceIcons.default;
   
   return (
