@@ -1,0 +1,167 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "error": "Error"
+  },
+  "offline": {
+    "message": "You're currently offline. Some features are limited, but you can still view cached data and submit reports.",
+    "notice": "You are currently offline. Some features may be limited.",
+    "offlineNotice": "You are currently offline. Some features may be limited."
+  },
+  "tabs": {
+    "map": "Resource Map",
+    "alerts": "Alert Center",
+    "report": "Report Issue"
+  },
+  "reports": {
+    "submitNew": "Submit New Report",
+    "title": "Title",
+    "description": "Description",
+    "type": "Issue Type",
+    "severity": {
+      "1": "Minor Issue",
+      "2": "Moderate Issue",
+      "3": "Major Issue",
+      "4": "Critical Issue",
+      "minor": "Minor Issue",
+      "moderate": "Moderate Issue",
+      "major": "Major Issue",
+      "critical": "Critical Issue"
+    },
+    "useCurrentLocation": "Use My Current Location",
+    "locationCaptured": "Location captured",
+    "address": "Address or Location",
+    "addressHelp": "Provide a location description if you didn't use GPS",
+    "reportAnonymously": "Report Anonymously",
+    "submit": "Submit Report",
+    "recent": "Recent Community Reports",
+    "noReportsYet": "No community reports submitted yet",
+    "successMessage": "Thank you! Your report has been submitted successfully.",
+    "anonymous": "Anonymous Reporter",
+    "unknownUser": "Community Member",
+    "types": {
+      "damage": "Building Damage",
+      "flooding": "Flooding",
+      "blockedRoad": "Blocked Road",
+      "powerOutage": "Power Outage",
+      "medical": "Medical Emergency",
+      "other": "Other Issue"
+    },
+    "status": {
+      "verified": "Verified",
+      "resolved": "Resolved",
+      "pending": "Pending"
+    }
+  },
+  "alerts": {
+    "title": "Alert Center",
+    "noAlerts": "No active alerts at this time",
+    "source": "Source",
+    "areas": "Affected Areas",
+    "untilFurtherNotice": "Until further notice",
+    "severity": {
+      "info": "Information",
+      "warning": "Warning",
+      "critical": "Critical",
+      "emergency": "Emergency"
+    }
+  },
+  "map": {
+    "filters": "Filters",
+    "resourceType": "Resource Type",
+    "status": "Status",
+    "allResources": "All Resources",
+    "allStatuses": "All Statuses",
+    "layers": "Map Layers",
+    "resources": "Resources",
+    "reports": "Community Reports",
+    "yourLocation": "Your Location"
+  },
+  "resources": {
+    "shelter": "Shelter",
+    "hospital": "Hospital",
+    "pharmacy": "Pharmacy",
+    "food": "Food Distribution",
+    "water": "Water Source",
+    "fuel": "Fuel Station",
+    "atm": "ATM/Bank"
+  },
+  "status": {
+    "operational": "Operational",
+    "limited": "Limited Capacity",
+    "closed": "Closed"
+  },
+  "resource": {
+    "address": "Address",
+    "capacity": "Capacity",
+    "lastUpdated": "Last Updated",
+    "directions": "Get Directions"
+  },
+  "errors": {
+    "locationAccess": "Unable to access your location. Please check permissions.",
+    "geolocationNotSupported": "Geolocation is not supported by your browser.",
+    "reportSubmission": "Failed to submit report. Please try again.",
+    "fetchFailed": "Failed to fetch data. Please try again later."
+  },
+  "app": {
+    "title": "Bhubaneswar Disaster Management",
+    "subtitle": "Community Resilience Platform",
+    "description": "Real-time disaster alerts and community reporting for Bhubaneswar",
+    "footer": "Bhubaneswar Disaster Management Platform"
+  },
+  "nav": {
+    "map": "Map",
+    "alerts": "Alerts",
+    "reports": "Community Reports",
+    "resources": "Resources",
+    "profile": "My Profile",
+    "settings": "Settings",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "auth": {
+    "login": "Login",
+    "loginButton": "Login",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot Password?",
+    "noAccount": "Don't have an account?",
+    "guestMessage": "Want to browse without an account?",
+    "continueAsGuest": "Continue as Guest",
+    "createAccount": "Create Account",
+    "personalInfo": "Personal Info",
+    "securityInfo": "Security",
+    "additionalInfo": "Additional Info",
+    "name": "Full Name",
+    "phone": "Phone Number",
+    "address": "Address",
+    "pincode": "PIN Code",
+    "confirmPassword": "Confirm Password",
+    "register": "Register",
+    "alreadyHaveAccount": "Already have an account?",
+    "loginHere": "Login here",
+    "registrationSuccess": "Registration Successful!",
+    "registrationSuccessMessage": "Your account has been created successfully. You will be redirected to the login page in a few seconds.",
+    "proceedToLogin": "Proceed to Login"
+  },
+  "validation": {
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address",
+    "invalidPhone": "Please enter a valid 10-digit phone number",
+    "passwordLength": "Password must be at least 8 characters long",
+    "passwordMismatch": "Passwords do not match"
+  },
+  "profile": {
+    "personalInfo": "Personal Information",
+    "activityHistory": "Activity History",
+    "preferences": "Preferences",
+    "edit": "Edit Profile",
+    "recentReports": "Recent Reports",
+    "notificationSettings": "Notification Settings"
+  }
+}

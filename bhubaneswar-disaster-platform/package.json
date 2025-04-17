@@ -1,0 +1,42 @@
+{
+  "name": "bhubaneswar-disaster-platform",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.6",
+    "@mui/material": "^5.15.6",
+    "@reduxjs/toolkit": "^2.1.0",
+    "axios": "^1.6.7",
+    "i18next": "^23.8.2",
+    "idb": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
+    "leaflet": "^1.9.4",
+    "next": "14.1.0",
+    "next-pwa": "^5.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^14.0.5",
+    "react-leaflet": "^4.2.1",
+    "react-redux": "^9.1.0",
+    "uuid": "^9.0.1",
+    "workbox-window": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "@types/react": "^18.2.52",
+    "@types/react-dom": "^18.2.18",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.1.0",
+    "postcss": "^8.4.33",
+    "typescript": "^5.3.3"
+  }
+}
