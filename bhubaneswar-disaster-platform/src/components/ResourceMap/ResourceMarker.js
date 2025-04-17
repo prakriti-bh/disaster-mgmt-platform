@@ -52,6 +52,7 @@ export default function ResourceMarker({ resource }) {
     capacity,
     lastUpdated 
   } = resource;
+<<<<<<< HEAD
 
   // Handle both coordinate formats (lat/lng and latitude/longitude)
   const lat = coordinates?.lat ?? coordinates?.latitude;
@@ -64,6 +65,11 @@ export default function ResourceMarker({ resource }) {
   }
 
   const position = [lat, lng];
+=======
+  
+  const position = [coordinates.latitude, coordinates.longitude];
+  
+>>>>>>> 900dc05724665642156b658da2f513a722589619
   const icon = resourceIcons[category] || resourceIcons.default;
   
   return (
