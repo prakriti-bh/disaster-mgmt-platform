@@ -1,7 +1,7 @@
 'use client';
 
 import { useSelector } from 'react-redux';
-import { Box, List, ListItem, ListItemText, Typography, Chip, Paper, Divider, Avatar, Rating } from '@mui/material';
+import { Box, List, ListItem, ListItemText, Typography, Chip, Divider, Avatar, Rating } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
 export default function RecentReports() {
@@ -9,9 +9,9 @@ export default function RecentReports() {
   const reports = useSelector(state => state.reports.items);
 
   // Sort reports by date (newest first) and take top 5
-  const sortedReports = [...reports].sort((a, b) => 
-    new Date(b.createdAt) - new Date(a.createdAt)
-  ).slice(0, 5);
+  const sortedReports = [...reports]
+    .sort((a, b) => new Date(b.createdAt || b.timestamp || 0) - new Date(a.createdAt || a.timestamp || 0))
+    .slice(0, 5);
 
   if (sortedReports.length === 0) {
     return (
@@ -33,7 +33,7 @@ export default function RecentReports() {
               primary={
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                   <Typography variant="subtitle2" sx={{ mr: 2 }}>
-                    {report.title}
+                    {report.title || `${t(`reports.types.${report.type}`)} Report`}
                   </Typography>
                   <Chip 
                     label={t(`reports.types.${report.type}`)} 
@@ -52,10 +52,12 @@ export default function RecentReports() {
                   </Typography>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 1 }}>
                     <Typography variant="caption" color="text.secondary">
-                      {report.address || `${report.coordinates?.latitude.toFixed(6)}, ${report.coordinates?.longitude.toFixed(6)}`}
+                      {report.address || (report.coordinates && 
+                        `${report.coordinates.latitude.toFixed(6)}, ${report.coordinates.longitude.toFixed(6)}`
+                      )}
                     </Typography>
                     <Typography variant="caption" color="text.secondary">
-                      {new Date(report.createdAt).toLocaleString()}
+                      {new Date(report.createdAt || report.timestamp || Date.now()).toLocaleString()}
                     </Typography>
                   </Box>
                   <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
@@ -67,12 +69,12 @@ export default function RecentReports() {
                       <>
                         <Avatar 
                           sx={{ width: 24, height: 24, mr: 1 }}
-                          alt={report.user?.name || "User"}
+                          alt={report.contact?.name || report.user?.name || t('reports.unknownUser')}
                         >
-                          {(report.user?.name || "U")[0]}
+                          {(report.contact?.name?.[0] || report.user?.name?.[0] || "U")}
                         </Avatar>
                         <Typography variant="caption">
-                          {report.user?.name || t('reports.unknownUser')}
+                          {report.contact?.name || report.user?.name || t('reports.unknownUser')}
                         </Typography>
                       </>
                     )}

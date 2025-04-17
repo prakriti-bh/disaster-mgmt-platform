@@ -10,8 +10,8 @@ const BHUBANESWAR_BOUNDS = {
 
 // Generate a random location within Bhubaneswar bounds
 const getRandomLocation = () => ({
-  lat: BHUBANESWAR_BOUNDS.south + Math.random() * (BHUBANESWAR_BOUNDS.north - BHUBANESWAR_BOUNDS.south),
-  lng: BHUBANESWAR_BOUNDS.west + Math.random() * (BHUBANESWAR_BOUNDS.east - BHUBANESWAR_BOUNDS.west)
+  latitude: BHUBANESWAR_BOUNDS.south + Math.random() * (BHUBANESWAR_BOUNDS.north - BHUBANESWAR_BOUNDS.south),
+  longitude: BHUBANESWAR_BOUNDS.west + Math.random() * (BHUBANESWAR_BOUNDS.east - BHUBANESWAR_BOUNDS.west)
 });
 
 const DISASTER_TYPES = ['flood', 'fire', 'earthquake', 'cyclone', 'building_collapse'];
@@ -19,22 +19,29 @@ const SEVERITY_LEVELS = ['low', 'medium', 'high', 'critical'];
 const RESOURCE_TYPES = ['shelter', 'medical', 'food', 'water', 'other'];
 
 // Generate mock reports
-export const generateMockReport = () => ({
-  reportId: uuidv4(),
-  type: DISASTER_TYPES[Math.floor(Math.random() * DISASTER_TYPES.length)],
-  severity: SEVERITY_LEVELS[Math.floor(Math.random() * SEVERITY_LEVELS.length)],
-  description: `Mock ${DISASTER_TYPES[Math.floor(Math.random() * DISASTER_TYPES.length)]} incident report`,
-  location: getRandomLocation(),
-  timestamp: new Date().toISOString(),
-  status: 'active',
-  isAnonymous: Math.random() > 0.5,
-  mediaUrls: [],
-  contact: Math.random() > 0.5 ? {
-    name: 'Mock Reporter',
-    phone: '+91987654321' + Math.floor(Math.random() * 9),
-    email: `mock${Math.floor(Math.random() * 100)}@example.com`
-  } : undefined
-});
+export const generateMockReport = () => {
+  const type = DISASTER_TYPES[Math.floor(Math.random() * DISASTER_TYPES.length)];
+  const now = new Date().toISOString();
+  
+  return {
+    reportId: uuidv4(),
+    title: `Mock ${type} Report`,
+    type,
+    severity: Math.floor(Math.random() * 4) + 1,
+    description: `Mock ${type} incident report in test area`,
+    coordinates: getRandomLocation(),
+    createdAt: now,
+    updatedAt: now,
+    status: 'active',
+    isAnonymous: Math.random() > 0.5,
+    mediaUrls: [],
+    contact: Math.random() > 0.5 ? {
+      name: 'Mock Reporter',
+      phone: '+91987654321' + Math.floor(Math.random() * 9),
+      email: `mock${Math.floor(Math.random() * 100)}@example.com`
+    } : undefined
+  };
+};
 
 // Generate mock resources
 export const generateMockResource = () => ({

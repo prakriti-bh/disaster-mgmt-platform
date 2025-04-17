@@ -85,6 +85,12 @@ export default function ResourceMap() {
     });
   }, []);
 
+  // Fetch initial data
+  useEffect(() => {
+    dispatch(fetchResources());
+    dispatch(fetchReports());
+  }, [dispatch]);
+
   const getCurrentLocation = useCallback(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(

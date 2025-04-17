@@ -36,6 +36,11 @@ const statusColors = {
 
 export default function ResourceMarker({ resource }) {
   const { t } = useTranslation();
+
+  if (!resource) {
+    return null;
+  }
+
   const { 
     name, 
     category, 
@@ -47,8 +52,18 @@ export default function ResourceMarker({ resource }) {
     capacity,
     lastUpdated 
   } = resource;
-  
-  const position = [coordinates.lat, coordinates.lng];
+
+  // Handle both coordinate formats (lat/lng and latitude/longitude)
+  const lat = coordinates?.lat ?? coordinates?.latitude;
+  const lng = coordinates?.lng ?? coordinates?.longitude;
+
+  // Return null if coordinates are not valid
+  if (!lat || !lng) {
+    console.warn('Invalid coordinates for resource:', resource);
+    return null;
+  }
+
+  const position = [lat, lng];
   const icon = resourceIcons[category] || resourceIcons.default;
   
   return (

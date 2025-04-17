@@ -41,9 +41,10 @@ export default function ReportForm() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
+          // Store location using latitude/longitude format consistently
           setLocation({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
           });
         },
         (err) => {
@@ -61,9 +62,10 @@ export default function ReportForm() {
     setError(null);
     
     try {
+      // Create report data with standardized coordinate format
       const reportData = {
         ...formData,
-        coordinates: location,
+        coordinates: location, // location is already in latitude/longitude format
         status: 'reported',
         createdAt: new Date().toISOString(),
       };
@@ -144,7 +146,7 @@ export default function ReportForm() {
             <MenuItem value="other">{t('reports.types.other')}</MenuItem>
           </Select>
         </FormControl>
-        
+
         <Box sx={{ mt: 2, mb: 1 }}>
           <Typography component="legend">{t('reports.severity')}</Typography>
           <Rating
@@ -185,7 +187,7 @@ export default function ReportForm() {
           
           {location && (
             <Typography variant="caption" color="success.main">
-              {t('reports.locationCaptured')}: {location.lat.toFixed(6)}, {location.lng.toFixed(6)}
+              {t('reports.locationCaptured')}: {location.latitude.toFixed(6)}, {location.longitude.toFixed(6)}
             </Typography>
           )}
         </Box>
